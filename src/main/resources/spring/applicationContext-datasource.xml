@@ -13,18 +13,18 @@
               class="com.mchange.v2.c3p0.ComboPooledDataSource"
               destroy-method="close">
             <property name="driverClass">
-                <value>com.mysql.jdbc.Driver</value>
+                <value>org.postgresql.Driver</value>
             </property>
             <property name="jdbcUrl">
-                <value>jdbc:mysql://localhost:3306/foo?useUnicode=true&amp;characterEncoding=utf8</value>
+                <value>jdbc:postgresql://127.0.0.1:5432/expense</value>
             </property>
             <!--MySQL数据库的用户名 -->
             <property name="user">
-                <value>root</value>
+                <value>postgresql</value>
             </property>
             <!--MySQL数据库 密码 -->
             <property name="password">
-                <value>root</value>
+                <value>500235</value>
             </property>
             <!--连接池中保留的最小连接数。-->
             <property name="minPoolSize">
@@ -50,7 +50,7 @@
             statements属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面
             的因素。如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
             <property name="maxStatements">
-                <value>0</value>
+                <value>10</value>
             </property>
             <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
             <property name="idleConnectionTestPeriod">

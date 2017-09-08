@@ -11,6 +11,25 @@
   <properties>
     <springmvc-version>4.3.0.RELEASE</springmvc-version>
   </properties>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <environment>dev</environment>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>pro</id>
+      <properties>
+        <environment>pro</environment>
+      </properties>
+    </profile>
+  </profiles>
+
   <!--项目所需jar包-->
   <dependencies>
     <!--单元测试依赖包-->
@@ -152,10 +171,15 @@
       <artifactId>mybatis-spring</artifactId>
       <version>1.2.2</version>
     </dependency>
+    <!--<dependency>-->
+      <!--<groupId>mysql</groupId>-->
+      <!--<artifactId>mysql-connector-java</artifactId>-->
+      <!--<version>5.1.8</version>-->
+    <!--</dependency>-->
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.8</version>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.2-1002.jdbc4</version>
     </dependency>
     <dependency>
       <groupId>c3p0</groupId>
@@ -190,7 +214,11 @@
   <!--项目构建-->
   <build>
     <!--项目打包之后的名称-->
-    <finalName>test</finalName>
+    <finalName>forum</finalName>
+    <!--读取配置文件-->
+    <filters>
+      <filter>src/main/filters/jdbc-${environment}.properties</filter>
+    </filters>
     <!--构建需要的插件-->
     <plugins>
       <!--编译插件-->
