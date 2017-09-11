@@ -19,13 +19,13 @@ public class Book implements Serializable{
     /**
      * 价格
      */
-    private double price;
+    private int  price;
     /**
      * 出版日期
      */
     private Date publishDate;
 
-    public Book(int id, String title, double price, Date publishDate) {
+    public Book(int id, String title, int price, Date publishDate) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -51,11 +51,11 @@ public class Book implements Serializable{
         this.title = title;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

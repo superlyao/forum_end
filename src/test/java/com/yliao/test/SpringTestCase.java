@@ -23,5 +23,6 @@ public class SpringTestCase extends AbstractTransactionalJUnit4SpringContextTest
     @Test
     public void test () {
         List<Book> allBooks = bookDAO.getAllBooks();
+        System.out.println(allBooks);
     }
 }
