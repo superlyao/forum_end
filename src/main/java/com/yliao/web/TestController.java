@@ -23,28 +23,6 @@ public class TestController {
     @Autowired
     CacheService cacheService;
 
-    @Autowired
-    BookDAO bookDAO;
-
-    /**
-     * 测试数据库是否正常
-     *
-     * @return
-     */
-    @RequestMapping("/database")
-    public String testDatabase(Model model) {
-        StringBuilder builder = new StringBuilder();
-        List<Book> list = bookDAO.getAllBooks();
-        for (Book book :
-                list) {
-            builder.append(book.toString()).append("\n");
-        }
-        if (StringUtils.isEmpty(builder.toString())) {
-            model.addAttribute("result", "请先往数据库添加测试数据------");
-        }
-        model.addAttribute("result", builder.toString());
-        return "/testDatabase";
-    }
 
     /**
      * 测试页面跳转是否正常
@@ -74,5 +52,11 @@ public class TestController {
     public String noSitemesh(Model model) {
         model.addAttribute("result", "这是不带有sitemesh的页面");
         return "/nositemesh";
+    }
+
+    @RequestMapping("/connection")
+    @ResponseBody
+    public String testConnection() {
+        return "hello";
     }
 }
