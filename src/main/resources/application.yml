@@ -1,0 +1,6 @@
+server:
+  port: 8081
+  context-path: /nrise/ccm
+spring:
+  profiles:
+    active: dev
