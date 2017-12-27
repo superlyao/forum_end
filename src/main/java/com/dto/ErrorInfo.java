@@ -1,4 +1,4 @@
-package entity.dto;
+package com.dto;
 
 /**
  * The type Error info.

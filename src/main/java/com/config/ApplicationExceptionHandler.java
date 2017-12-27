@@ -1,7 +1,7 @@
-package config;
+package com.config;
 
-import entity.dto.ErrorInfo;
-import exception.BusinessException;
+import com.dto.ErrorInfo;
+import com.exception.BusinessException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +25,7 @@ public class ApplicationExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", e);
+        modelAndView.addObject("com/exception", e);
         modelAndView.addObject("message", e.getMessage());
         modelAndView.setViewName("error");
         return modelAndView;
