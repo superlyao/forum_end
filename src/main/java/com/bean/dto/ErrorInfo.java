@@ -1,4 +1,4 @@
-package com.dto;
+package com.bean.dto;
 
 /**
  * The type Error info.

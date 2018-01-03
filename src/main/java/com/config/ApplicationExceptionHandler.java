@@ -1,6 +1,6 @@
 package com.config;
 
-import com.dto.ErrorInfo;
+import com.bean.dto.ErrorInfo;
 import com.exception.BusinessException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,6 +1,9 @@
 server:
   port: 8081
-  context-path: /nrise/ccm
+  context-path: /forum
 spring:
   profiles:
     active: dev
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.dao
