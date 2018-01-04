@@ -1,6 +1,6 @@
-package com.dao;
+package com.yliao.dao;
 
-import com.bean.UserInfo;
+import com.yliao.bean.UserInfo;
 
 /**
  * @Author liaoyao

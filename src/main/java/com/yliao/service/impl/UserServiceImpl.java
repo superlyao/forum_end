@@ -1,8 +1,8 @@
-package com.service.impl;
+package com.yliao.service.impl;
 
-import com.bean.UserInfo;
-import com.exception.BusinessException;
-import com.service.IUserService;
+import com.yliao.bean.UserInfo;
+import com.yliao.exception.BusinessException;
+import com.yliao.service.IUserService;
 
 /**
  * @Author liaoyao

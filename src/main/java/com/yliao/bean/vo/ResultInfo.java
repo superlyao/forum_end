@@ -1,4 +1,4 @@
-package com.bean.vo;
+package com.yliao.bean.vo;
 
 import java.io.Serializable;
 

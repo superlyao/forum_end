@@ -1,4 +1,4 @@
-package com.bean;
+package com.yliao.bean;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
-package com.config;
+package com.yliao.config;
 
-import com.bean.dto.ErrorInfo;
-import com.exception.BusinessException;
+import com.yliao.bean.dto.ErrorInfo;
+import com.yliao.exception.BusinessException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +25,7 @@ public class ApplicationExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("com/exception", e);
+        modelAndView.addObject("com/yliao/exception", e);
         modelAndView.addObject("message", e.getMessage());
         modelAndView.setViewName("error");
         return modelAndView;

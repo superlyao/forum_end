@@ -1,4 +1,4 @@
-package com.exception;
+package com.yliao.exception;
 
 /**
  * @Author liaoyao
