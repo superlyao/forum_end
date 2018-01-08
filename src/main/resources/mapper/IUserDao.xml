@@ -5,8 +5,10 @@
 <mapper namespace="com.yliao.dao.IUserDao">
     <insert id="save" parameterType="com.yliao.bean.UserInfo">
         <!--使用uuid自动生成主键-->
-        <selectKey keyProperty="id" resultType="String" order="BEFORE">
-          SELECT replace(uuid(), '-', '') FROM dual
-        </selectKey>
+        <!--<selectKey keyProperty="id" resultType="String" order="BEFORE">-->
+          <!--SELECT replace(uuid(), '-', '') FROM dual-->
+        <!--</selectKey>-->
+        INSERT INTO user_info (id, user_name, pass_word, email, user_face, sex)
+        VALUES (#{id}, #{userName}, #{passWord}, #{email}, #{userFace}, #{sex})
     </insert>
 </mapper>
