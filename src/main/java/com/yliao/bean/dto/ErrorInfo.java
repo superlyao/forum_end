@@ -21,6 +21,7 @@ public class ErrorInfo<T> {
     private Integer code;
     private T data;
     private String url;
+    private boolean isSuccess;
 
     /**
      * Gets message.
@@ -92,5 +93,13 @@ public class ErrorInfo<T> {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public boolean isSuccess() {
+        return isSuccess;
+    }
+
+    public void setSuccess(boolean success) {
+        isSuccess = success;
     }
 }

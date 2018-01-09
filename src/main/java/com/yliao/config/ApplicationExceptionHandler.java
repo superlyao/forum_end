@@ -45,6 +45,7 @@ public class ApplicationExceptionHandler {
         errorInfo.setMessage(e.getMessage());
         errorInfo.setData("发生错误");
         errorInfo.setUrl(request.getRequestURL().toString());
+        errorInfo.setSuccess(false);
         return errorInfo;
     }
 }

@@ -3,12 +3,36 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yliao.dao.IUserDao">
+    <resultMap type="com.yliao.bean.UserInfo" id="userInfoResult">
+        <id property="id" column="id"/>
+        <result property="userName" column="user_name"/>
+        <result property="passWord" column="pass_word"></result>
+        <result property="email" column="email"></result>
+        <result property="userFace" column="user_face"></result>
+        <result property="sex" column="sex"></result>
+        <result property="isActivate" column="is_activate"></result>
+    </resultMap>
+
     <insert id="save" parameterType="com.yliao.bean.UserInfo">
         <!--使用uuid自动生成主键-->
-        <!--<selectKey keyProperty="id" resultType="String" order="BEFORE">-->
-          <!--SELECT replace(uuid(), '-', '') FROM dual-->
-        <!--</selectKey>-->
-        INSERT INTO user_info (id, user_name, pass_word, email, user_face, sex)
-        VALUES (#{id}, #{userName}, #{passWord}, #{email}, #{userFace}, #{sex})
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            SELECT replace(uuid(), '-', '') FROM dual
+        </selectKey>
+        INSERT INTO user_info (id, user_name, pass_word, email, user_face, sex, is_activate)
+        VALUES (#{id}, #{userName}, #{passWord}, #{email}, #{userFace}, #{sex}, #{isActivate})
     </insert>
+
+    <select id="findById" resultMap="userInfoResult">
+        SELECT u.id, u.user_name, u.pass_word, u.email, u.user_face, u.sex, u.is_activate
+        FROM user_info u WHERE u.id = #{userId}
+    </select>
+
+    <select id="findByUserName" resultMap="userInfoResult">
+        SELECT u.id, u.user_name, u.pass_word, u.email, u.user_face, u.sex, u.is_activate
+        FROM user_info u WHERE u.user_name = #{userName}
+    </select>
+
+    <update id="updateActivate">
+        UPDATE user_info u SET u.is_activate = 1 WHERE u.id = #{userId}
+    </update>
 </mapper>

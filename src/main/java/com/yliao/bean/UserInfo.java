@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 /**
  * The type User info.
- * @Author liaoyao
- * @Date 2018 /1/3.
- * 用户前端注册用户类
+ *
+ * @author liaoyao
+ * @Date 2018 /1/3. 用户前端注册用户类
  */
 public class UserInfo implements Serializable {
     /**
@@ -38,6 +38,11 @@ public class UserInfo implements Serializable {
      * 性别 男0 女1
      */
     private Integer sex;
+
+    /**
+     * 是否激活 未激活0 激活1
+     */
+    private Integer isActivate = 0;
 
     /**
      * Gets id.
@@ -145,5 +150,23 @@ public class UserInfo implements Serializable {
      */
     public void setSex(Integer sex) {
         this.sex = sex;
+    }
+
+    /**
+     * Gets is activate.
+     *
+     * @return the is activate
+     */
+    public Integer getIsActivate() {
+        return isActivate;
+    }
+
+    /**
+     * Sets is activate.
+     *
+     * @param isActivate the is activate
+     */
+    public void setIsActivate(Integer isActivate) {
+        this.isActivate = isActivate;
     }
 }
