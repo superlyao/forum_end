@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2018/1/4.
  */
 public class Log {

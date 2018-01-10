@@ -3,7 +3,7 @@ package com.yliao.common;
 import java.util.UUID;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2018/1/7.
  * 工具类
  */

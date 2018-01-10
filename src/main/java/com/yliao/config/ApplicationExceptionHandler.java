@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2017/12/27.
  * 全局处理异常配置类
  */

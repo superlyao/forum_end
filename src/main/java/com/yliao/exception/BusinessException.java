@@ -1,7 +1,7 @@
 package com.yliao.exception;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2017/12/27.
  */
 public class BusinessException extends Exception {

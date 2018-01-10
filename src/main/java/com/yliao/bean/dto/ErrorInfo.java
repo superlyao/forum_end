@@ -4,7 +4,7 @@ package com.yliao.bean.dto;
  * The type Error info.
  *
  * @param <T> the type parameter
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2017 /12/27.
  */
 public class ErrorInfo<T> {

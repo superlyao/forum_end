@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2018/1/3.
  * 用户
  */

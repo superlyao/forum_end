@@ -3,7 +3,7 @@ package com.yliao.bean.vo;
 import java.io.Serializable;
 
 /**
- * @Author liaoyao
+ * @author liaoyao
  * @Date 2018/1/3.
  */
 public class ResultInfo<T> implements Serializable {
