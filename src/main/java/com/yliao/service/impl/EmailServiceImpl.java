@@ -31,9 +31,10 @@ public class EmailServiceImpl implements IEmailService {
     public void activateUser(UserInfo userInfo) throws BusinessException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         try {
+            mimeMessage.addHeader("mail.smtp.starttls.enable", "true");
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
             // 发送人
-            helper.setFrom("2238224938@qq.com");
+            helper.setFrom("superyao12@sina.com");
             // 收件人
             helper.setTo(userInfo.getEmail());
             helper.setSubject("主题: 激活账号");

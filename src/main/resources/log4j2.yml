@@ -39,7 +39,7 @@ Configuration:
 
   Loggers:
     Root:
-      level: debug
+      level: info
       AppenderRef:
         - ref: CONSOLE
         - ref: ROLLING_FILE
