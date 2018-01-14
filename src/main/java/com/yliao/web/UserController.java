@@ -87,6 +87,9 @@ public class UserController {
             if (userInfo == null) {
                 throw new BusinessException("该账号不存在");
             }
+            if (userInfo.getIsActivate() == 1) {
+                throw new BuilderException("该账号已激活");
+            }
             boolean resultType = iUserService.changeUserActivateType(userId);
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("userName", userInfo.getUserName());
