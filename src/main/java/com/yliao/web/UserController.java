@@ -40,7 +40,7 @@ public class UserController {
      * @return 新建是否成功
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResultInfo userRegister(HttpServletRequest request, UserInfo userInfo, @RequestParam("file") MultipartFile file) {
+    public ResultInfo userRegister(HttpServletRequest request,UserInfo userInfo, @RequestParam("file") MultipartFile file) {
         ResultInfo resultInfo = new ResultInfo();
         try {
             if (file.isEmpty()) {

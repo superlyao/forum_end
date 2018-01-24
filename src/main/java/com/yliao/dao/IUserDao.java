@@ -3,6 +3,7 @@ package com.yliao.dao;
 import com.yliao.bean.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author liaoyao
@@ -16,6 +17,7 @@ public interface IUserDao {
     * @param userInfo
     * @return
     */
+   @Transactional
    Integer save (UserInfo userInfo);
 
    /**
