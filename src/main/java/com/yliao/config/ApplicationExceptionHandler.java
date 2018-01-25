@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author liaoyao
@@ -22,30 +24,29 @@ public class ApplicationExceptionHandler {
      * @param e
      * @return
      */
-    @ExceptionHandler(value = Exception.class)
-    public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("com/yliao/exception", e);
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.setViewName("error");
-        return modelAndView;
-    }
-
+//    @ExceptionHandler(value = Exception.class)
+//    public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("com/yliao/exception", e);
+//        modelAndView.addObject("message", e.getMessage());
+//        modelAndView.setViewName("error");
+//        return modelAndView;
     /**
      * 捕获业务异常
      * @param request
      * @param e
      * @return
      */
-    @ExceptionHandler(value = BusinessException.class)
+    @ExceptionHandler(value = {BusinessException.class, Exception.class})
     @ResponseBody
-    public ErrorInfo<String> BuisinessException(HttpServletRequest request, BusinessException e) {
-        ErrorInfo<String> errorInfo = new ErrorInfo<String>();
-        errorInfo.setCode(ErrorInfo.ERROR);
-        errorInfo.setMessage(e.getMessage());
-        errorInfo.setData("发生错误");
-        errorInfo.setUrl(request.getRequestURL().toString());
-        errorInfo.setSuccess(false);
-        return errorInfo;
+    public Map<String, Object> BuisinessException(HttpServletRequest request, BusinessException e) {
+        Map<String, Object> errorResult = new HashMap<String, Object>();
+        errorResult.put("code", ErrorInfo.ERROR + "");
+        errorResult.put("message", e.getMessage());
+        errorResult.put("url", request.getRequestURL().toString());
+        errorResult.put("success", false);
+        return errorResult;
     }
+
+//    }
 }
