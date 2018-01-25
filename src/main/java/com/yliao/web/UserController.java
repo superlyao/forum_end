@@ -53,17 +53,18 @@ public class UserController {
             if (resultUserInfo != null) {
                 throw new BusinessException("用户名已存在");
             }
-            String requestUrl = request.getRequestURL().toString();
-            String requestPort = requestUrl.substring(0, requestUrl.indexOf("forum") - 1);
+            String requestPort = request.getScheme() + "://" + request.getServerName() + ":" + request.getLocalPort();
             String imageType = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
             InputStream inputStream = file.getInputStream();
             userInfo.setUserFace(requestPort + seveImage(request, inputStream, imageType));
             userInfo.setIsActivate(0);
-            if (iUserService.saveUser(userInfo)) {
+            boolean b = iUserService.saveUser(userInfo);
+            if (b) {
                 resultInfo.setSuccess(true);
                 resultInfo.setMessage("注册成功");
+                resultInfo.setDate(userInfo);
                 // 发送激活邮件
-                iEmailService.activateUser(userInfo);
+//                iEmailService.activateUser(userInfo);
             }
         } catch (Exception e) {
             Log.error(this.getClass(), e.getMessage());
